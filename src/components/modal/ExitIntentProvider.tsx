@@ -1,16 +1,18 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { FunnelModal } from "./FunnelModal";
 import { useExitIntent } from "@/hooks/useExitIntent";
 
 export function ExitIntentProvider({ children }: { children: ReactNode }) {
-  //   const [showModal, setShowModal] = useState(true);
-  const [showModal, setShowModal] = useState(() => {
-    if (typeof window === "undefined") return true;
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
     const stored = localStorage.getItem("funnel");
-    return !stored || !JSON.parse(stored).completed;
-  });
+    if (!stored || !JSON.parse(stored).completed) {
+      setShowModal(true);
+    }
+  }, []);
 
   useExitIntent(() => setShowModal(true));
 

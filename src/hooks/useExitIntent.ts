@@ -4,8 +4,13 @@ import { useEffect } from "react";
 
 export function useExitIntent(onExit: () => void) {
   useEffect(() => {
+    let triggered = false;
+
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0) onExit();
+      if (!triggered && e.clientY <= 0) {
+        triggered = true;
+        onExit();
+      }
     };
 
     const handleVisibility = () => {
