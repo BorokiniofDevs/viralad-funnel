@@ -170,6 +170,18 @@ export default function Navbar() {
               <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-orange-500 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
           </div>
+          {/* CONTACT */}
+          <div>
+            <Link
+              href="/contact"
+              className={`${navItem} ${
+                isActive("/training") ? activeStyles : "text-gray-900"
+              } hover:text-orange-500 hover:scale-105`}
+            >
+              Contact
+              <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-orange-500 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
+            </Link>
+          </div>
         </nav>
       </aside>
     </>
