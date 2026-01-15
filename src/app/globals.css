@@ -16,3 +16,15 @@ body {
 body {
   scroll-behavior: smooth;
 }
+.input {
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.75rem;
+  color: white;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
