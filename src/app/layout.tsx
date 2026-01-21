@@ -2,6 +2,7 @@ import { ExitIntentProvider } from "@/components/modal/ExitIntentProvider";
 import "./globals.css";
 import react from "react";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Viral Ad Media — Grow Your Revenue",
