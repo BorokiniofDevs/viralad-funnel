@@ -17,6 +17,21 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ExitIntentProvider>{children}</ExitIntentProvider>
+        <Script id="vivian-config" strategy="afterInteractive">
+          {`
+            window.VIVIAN_CHAT_CONFIG = {
+              baseUrl: "https://vivian-chat.netlify.app",
+              position: "right",
+              bottom: "18px",
+              side: "18px"
+            };
+          `}
+        </Script>
+
+        <Script
+          src="https://vivian-chat.netlify.app/vivian-widget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
